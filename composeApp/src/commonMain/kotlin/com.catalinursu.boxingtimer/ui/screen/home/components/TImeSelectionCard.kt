@@ -1,4 +1,4 @@
-package com.catalinursu.boxingtimer.ui.screens
+package com.catalinursu.boxingtimer.ui.screen.home.components
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.CardDefaults
