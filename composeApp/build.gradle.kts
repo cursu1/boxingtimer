@@ -51,7 +51,11 @@ kotlin {
             implementation(libs.ktor.serialization.kotlinx.json)
 
             implementation(libs.kamel)
+
             implementation(libs.koin.core)
+            implementation(libs.koin.compose)
+            implementation(libs.koin.android)
+
             implementation(libs.voyager.navigator)
             implementation(libs.voyager.koin)
         }
