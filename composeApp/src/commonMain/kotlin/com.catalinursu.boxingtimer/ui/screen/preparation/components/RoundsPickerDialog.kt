@@ -1,4 +1,4 @@
-package com.catalinursu.boxingtimer.ui.screen.home.components
+package com.catalinursu.boxingtimer.ui.screen.preparation.components
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape

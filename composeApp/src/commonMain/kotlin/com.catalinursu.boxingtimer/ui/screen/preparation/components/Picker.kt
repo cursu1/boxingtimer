@@ -1,4 +1,4 @@
-package com.catalinursu.boxingtimer.ui.screen.home.components
+package com.catalinursu.boxingtimer.ui.screen.preparation.components
 
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.gestures.snapping.rememberSnapFlingBehavior

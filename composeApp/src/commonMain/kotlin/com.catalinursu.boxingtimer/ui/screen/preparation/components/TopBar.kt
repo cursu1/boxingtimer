@@ -1,4 +1,4 @@
-package com.catalinursu.boxingtimer.ui.screen.home.components
+package com.catalinursu.boxingtimer.ui.screen.preparation.components
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Settings
@@ -7,11 +7,14 @@ import androidx.compose.runtime.Composable
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun TopBar() {
+fun TopBar(
+    title: String,
+    onSettingsClick: () -> Unit
+) {
     TopAppBar(
-        title = { Text("Boxing Timer") },
+        title = { Text(title) },
         actions = {
-            IconButton(onClick = { /* doSomething() */ }) {
+            IconButton(onClick = onSettingsClick) {
                 Icon(Icons.Default.Settings, contentDescription = "Settings")
             }
         }

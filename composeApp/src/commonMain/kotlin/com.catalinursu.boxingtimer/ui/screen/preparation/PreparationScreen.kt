@@ -1,4 +1,4 @@
-package com.catalinursu.boxingtimer.ui.screen.home
+package com.catalinursu.boxingtimer.ui.screen.preparation
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.material3.MaterialTheme
@@ -9,30 +9,30 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import com.catalinursu.boxingtimer.ui.screen.home.components.ActionButton
-import com.catalinursu.boxingtimer.ui.screen.home.components.PressetButton
-import com.catalinursu.boxingtimer.ui.screen.home.components.TimeSelectionCard
-import com.catalinursu.boxingtimer.ui.screen.home.components.TopBar
+import com.catalinursu.boxingtimer.ui.screen.preparation.components.*
 
 @Composable
-fun MainScreen() {
+fun PreparationScreen() {
     Surface(
         modifier = Modifier.fillMaxSize(),
         color = MaterialTheme.colorScheme.surface
     ) {
         Scaffold(
             topBar = {
-                TopBar()
+                TopBar(
+                    title = "Preparation",
+                    onSettingsClick = { /* Handle back click */ }
+                )
             },
             content = { paddingValues ->
-                MainScreenContent(paddingValues)
+                PreparationScreenContent(paddingValues)
             },
         )
     }
 }
 
 @Composable
-fun MainScreenContent(
+fun PreparationScreenContent(
     paddingValues: PaddingValues
 ) {
     Column(
@@ -43,15 +43,15 @@ fun MainScreenContent(
             modifier = Modifier.padding(16.dp).fillMaxWidth(), // Add padding around the row
             horizontalArrangement = Arrangement.SpaceEvenly // Space the buttons evenly
         ) {
-            PressetButton(onClick = { /* Handle click for button 1 */ })
-            PressetButton(onClick = { /* Handle click for button 2 */ })
-            PressetButton(onClick = { /* Handle click for button 3 */ })
+            PresetButton(onClick = { /* Handle click for button 1 */ })
+            PresetButton(onClick = { /* Handle click for button 2 */ })
+            PresetButton(onClick = { /* Handle click for button 3 */ })
         }
 
         TimeSelectionCard(title = "Preparation Time")
         TimeSelectionCard(title = "Round Time")
         TimeSelectionCard(title = "Rest Time")
-        TimeSelectionCard(title = "Rounds")
+        RoundsSelectionCard(title = "Rounds")
 
         Text(
             text = "Total Time: 00:00",

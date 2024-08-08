@@ -1,4 +1,4 @@
-package com.catalinursu.boxingtimer.ui.screen.home.components
+package com.catalinursu.boxingtimer.ui.screen.preparation.components
 
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.size
@@ -14,7 +14,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
 @Composable
-fun PressetButton(
+fun PresetButton(
     onClick: () -> Unit
 ) {
         Button(
