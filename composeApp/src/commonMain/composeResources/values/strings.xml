@@ -1,0 +1,30 @@
+<resources>
+<!--    Common-->
+    <string name="start_button_text">Start</string>
+    <string name="confirm_button_text">Confirm</string>
+    <string name="dismiss_button_text">Dismiss</string>
+    <string name="back_button_text">Back</string>
+    <string name="minutes_text">Minutes</string>
+    <string name="seconds_text">Seconds</string>
+
+<!--    Version-->
+    <string name="version_text">Version %s</string>
+
+    <!--    Preparation Screen-->
+    <string name="preparation_title_text">Preparation</string>
+    <string name="preparation_time_text">Preparation Time</string>
+    <string name="round_time_text">Round Time</string>
+    <string name="rest_time_text">Rest Time</string>
+    <string name="rounds_text">Rounds</string>
+    <string name="total_time_text">Total Time: %s:%s</string>
+    <string name="duration_picker_title_text">Duration</string>
+
+<!--    Training Screen-->
+    <string name="training_title_text">Training</string>
+    <string name="rounds_left_text">Rounds\n%s / %s</string>
+    <string name="timer_text">%s:%s</string>
+    <string name="pause_button_text">Pause</string>
+
+<!--    Settings Screen-->
+    <string name="settings_title_text">Settings</string>
+</resources>

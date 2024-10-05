@@ -14,6 +14,10 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Dialog
+import boxingtimer.composeapp.generated.resources.Res
+import boxingtimer.composeapp.generated.resources.confirm_button_text
+import boxingtimer.composeapp.generated.resources.dismiss_button_text
+import org.jetbrains.compose.resources.stringResource
 
 @Composable
 fun RoundsPickerDialog() {
@@ -58,7 +62,11 @@ fun RoundsPickerDialog() {
                         IconButton(
                             onClick = { },
                         ) {
-                            Icon(Icons.Default.Close, contentDescription = "Dismiss", modifier = Modifier.size(64.dp))
+                            Icon(
+                                Icons.Default.Close,
+                                contentDescription = stringResource(Res.string.dismiss_button_text),
+                                modifier = Modifier.size(64.dp)
+                            )
                         }
                     }
 
@@ -70,7 +78,11 @@ fun RoundsPickerDialog() {
                             onClick = { },
 
                             ) {
-                            Icon(Icons.Default.Done, contentDescription = "Confirm", modifier = Modifier.size(64.dp))
+                            Icon(
+                                Icons.Default.Done,
+                                contentDescription = stringResource(Res.string.confirm_button_text),
+                                modifier = Modifier.size(64.dp)
+                            )
                         }
                     }
                 }

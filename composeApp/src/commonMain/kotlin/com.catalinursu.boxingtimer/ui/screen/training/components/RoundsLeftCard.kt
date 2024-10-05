@@ -13,6 +13,9 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import boxingtimer.composeapp.generated.resources.Res
+import boxingtimer.composeapp.generated.resources.rounds_left_text
+import org.jetbrains.compose.resources.stringResource
 
 @Composable
 fun RoundsLeftCard(roundsLeft: Int, totalRounds: Int) {
@@ -29,7 +32,11 @@ fun RoundsLeftCard(roundsLeft: Int, totalRounds: Int) {
         ) {
             Text(
                 modifier = Modifier.fillMaxWidth(),
-                text = "Rounds\n3 / 15",
+                text = stringResource(
+                    Res.string.rounds_left_text,
+                    roundsLeft,
+                    totalRounds
+                ),
                 textAlign = TextAlign.Center, // Center the text
                 style = MaterialTheme.typography.titleLarge // Style of the text
             )

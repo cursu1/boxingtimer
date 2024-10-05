@@ -14,6 +14,12 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Dialog
+import boxingtimer.composeapp.generated.resources.*
+import boxingtimer.composeapp.generated.resources.Res
+import boxingtimer.composeapp.generated.resources.duration_picker_title_text
+import boxingtimer.composeapp.generated.resources.minutes_text
+import boxingtimer.composeapp.generated.resources.seconds_text
+import org.jetbrains.compose.resources.stringResource
 
 @Composable
 fun DurationPickerDialog() {
@@ -30,7 +36,7 @@ fun DurationPickerDialog() {
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 Text(
-                    text = "Duration",
+                    text = stringResource(Res.string.duration_picker_title_text),
                     modifier = Modifier
                         .fillMaxWidth(),
                     textAlign = TextAlign.Center,
@@ -46,8 +52,16 @@ fun DurationPickerDialog() {
                     Row(
                         verticalAlignment = Alignment.CenterVertically,
                     ) {
-                        Text("Minutes", textAlign = TextAlign.Center, modifier = Modifier.weight(0.5f))
-                        Text("Seconds", textAlign = TextAlign.Center, modifier = Modifier.weight(0.5f))
+                        Text(
+                            stringResource(Res.string.minutes_text),
+                            textAlign = TextAlign.Center,
+                            modifier = Modifier.weight(0.5f)
+                        )
+                        Text(
+                            stringResource(Res.string.seconds_text),
+                            textAlign = TextAlign.Center,
+                            modifier = Modifier.weight(0.5f)
+                        )
                     }
                     Row(modifier = Modifier.fillMaxWidth()) {
                         Picker(
@@ -79,7 +93,11 @@ fun DurationPickerDialog() {
                             IconButton(
                                 onClick = { },
                             ) {
-                                Icon(Icons.Default.Close, contentDescription = "Dismiss", modifier = Modifier.size(64.dp))
+                                Icon(
+                                    Icons.Default.Close,
+                                    contentDescription = stringResource(Res.string.dismiss_button_text),
+                                    modifier = Modifier.size(64.dp)
+                                )
                             }
                         }
 
@@ -90,8 +108,12 @@ fun DurationPickerDialog() {
                             IconButton(
                                 onClick = { },
 
-                            ) {
-                                Icon(Icons.Default.Done, contentDescription = "Confirm", modifier = Modifier.size(64.dp))
+                                ) {
+                                Icon(
+                                    Icons.Default.Done,
+                                    contentDescription = stringResource(Res.string.confirm_button_text),
+                                    modifier = Modifier.size(64.dp)
+                                )
                             }
                         }
 

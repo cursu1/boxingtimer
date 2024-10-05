@@ -11,8 +11,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import boxingtimer.composeapp.generated.resources.Res
+import boxingtimer.composeapp.generated.resources.settings_title_text
 import com.catalinursu.boxingtimer.ui.screen.settings.components.SettingItem
 import com.catalinursu.boxingtimer.ui.screen.settings.components.TopBar
+import org.jetbrains.compose.resources.stringResource
 
 @Composable
 fun SettingsScreen () {
@@ -22,7 +25,10 @@ fun SettingsScreen () {
     ) {
         Scaffold(
             topBar = {
-                TopBar()
+                TopBar(
+                    title = stringResource(Res.string.settings_title_text),
+                    onBackClick = { /* Handle back click */ }
+                )
             },
             content = { paddingValues ->
                 SettingsScreenContent(paddingValues)

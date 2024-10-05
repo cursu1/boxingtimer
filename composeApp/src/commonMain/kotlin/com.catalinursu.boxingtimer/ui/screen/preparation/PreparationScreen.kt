@@ -9,7 +9,13 @@ import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import boxingtimer.composeapp.generated.resources.*
+import boxingtimer.composeapp.generated.resources.Res
+import boxingtimer.composeapp.generated.resources.preparation_time_text
+import boxingtimer.composeapp.generated.resources.preparation_title_text
+import boxingtimer.composeapp.generated.resources.round_time_text
 import com.catalinursu.boxingtimer.ui.screen.preparation.components.*
+import org.jetbrains.compose.resources.stringResource
 
 @Composable
 fun PreparationScreen() {
@@ -20,7 +26,7 @@ fun PreparationScreen() {
         Scaffold(
             topBar = {
                 TopBar(
-                    title = "Preparation",
+                    title = stringResource(Res.string.preparation_title_text),
                     onSettingsClick = { /* Handle back click */ }
                 )
             },
@@ -48,19 +54,19 @@ fun PreparationScreenContent(
             PresetButton(onClick = { /* Handle click for button 3 */ })
         }
 
-        TimeSelectionCard(title = "Preparation Time")
-        TimeSelectionCard(title = "Round Time")
-        TimeSelectionCard(title = "Rest Time")
-        RoundsSelectionCard(title = "Rounds")
+        TimeSelectionCard(title = stringResource(Res.string.preparation_time_text))
+        TimeSelectionCard(title = stringResource(Res.string.round_time_text))
+        TimeSelectionCard(title = stringResource(Res.string.rest_time_text))
+        RoundsSelectionCard(title = stringResource(Res.string.rounds_text))
 
         Text(
-            text = "Total Time: 00:00",
+            text = stringResource(Res.string.total_time_text),
             modifier = Modifier
                 .fillMaxWidth(),
             textAlign = TextAlign.Center,
         )
 
-        ActionButton(text = "Start") {
+        ActionButton(text = stringResource(Res.string.start_button_text)) {
             //TODO: Implement start button
         }
     }
