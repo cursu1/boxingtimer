@@ -8,9 +8,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.catalinursu.boxingtimer.ui.screen.training.components.RoundsCard
-import com.catalinursu.boxingtimer.ui.screen.training.components.TimeCard
+import com.catalinursu.boxingtimer.ui.screen.training.components.PauseButton
+import com.catalinursu.boxingtimer.ui.screen.training.components.RoundsLeftCard
 import com.catalinursu.boxingtimer.ui.screen.training.components.TopBar
+import com.catalinursu.boxingtimer.ui.screen.training.components.TrainingDurationText
 
 @Composable
 fun TrainingScreen() {
@@ -36,20 +37,43 @@ fun TrainingScreen() {
 fun TrainingScreenContent(
     paddingValues: PaddingValues
 ) {
-    Column(
+    // Column to position the Text in the center and the Button at the bottom
+    Box(
         modifier = Modifier
+            .fillMaxSize()
             .padding(paddingValues)
-            .fillMaxSize(),
-        verticalArrangement = Arrangement.SpaceEvenly
     ) {
-         Row(
+        Row(
             modifier = Modifier
-                .fillMaxWidth(), // Add padding around the row
-            horizontalArrangement = Arrangement.SpaceEvenly, // Space the buttons evenly
+                .align(Alignment.TopCenter) // Align the button at the top center
+                .fillMaxWidth()
+                .padding(16.dp), // Padding around the button
+            horizontalArrangement = Arrangement.Center // Center the button horizontally
         ) {
-             RoundsCard(numberOfRounds = 5, remainingRounds = 15)
-             TimeCard(time = "15:00", onPauseClick = { /* Handle pause click */ })
-             RoundsCard(numberOfRounds = 5, remainingRounds = 15)
-         }
+            RoundsLeftCard(roundsLeft = 3, totalRounds = 15)
+        }
+
+        // Text centered vertically and horizontally
+        Column(
+            modifier = Modifier
+                .fillMaxSize(),
+            verticalArrangement = Arrangement.Center, // Center the text vertically
+            horizontalAlignment = Alignment.CenterHorizontally // Center the text horizontally
+        ) {
+            TrainingDurationText()
+        }
+
+        // Center the button at the bottom
+        Box(
+            modifier = Modifier
+                .align(Alignment.BottomCenter) // Align the button at the bottom center
+                .padding(16.dp) // Padding around the button
+                .size(150.dp) // Set the size of the button (can be adjusted)
+        ) {
+            PauseButton(
+                modifier = Modifier.fillMaxSize(),
+                onPauseClick = { /* Handle pause click */ }
+            )
+        }
     }
 }
